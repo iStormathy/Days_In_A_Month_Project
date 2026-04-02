@@ -4,7 +4,7 @@
 using namespace std;
 int main()
 {
-	int days, choice, year;
+	int choice, year;
 	cout << "Enter a number corresponding to a month: ";
 	cin >> choice;
 	if (choice < 1 || choice > 12) // Limits the choice to a range of 1-12
@@ -15,16 +15,15 @@ int main()
 		cin >> year;
 
 		if (choice == 2 && (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) // Equation to account for leap years
-			days = 29;
+			cout << "That month had, or will have 29 days in it." << endl;
 		else if
 			(choice == 2)
-			days = 28;
+			cout << "That month had, or will have 28 days in it." << endl;
 		else if
 			(choice == 4 || choice == 6 || choice == 9 || choice == 11)
-			days = 30;
+			cout << "That month had, or will have 30 days in it." << endl;
 		else
-			days = 31; // Default number, since there are more months with 31 days than not.
-		cout << "That month had, or will have, " << days << " days in it." << endl;
+			cout << "That month had, or will have 31 days in it." << endl;
 	}
 	return 0;
 }
